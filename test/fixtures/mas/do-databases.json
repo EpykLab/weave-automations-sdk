@@ -1,0 +1,21 @@
+[
+  {
+    "name": "stllr-k8s-mccutdotus",
+    "engine": "valkey",
+    "status": "online",
+    "region": "sfo3",
+    "connection": {"uri": "rediss://secret-user:secret-pass@db.example:25061"}
+  },
+  {
+    "name": "stllr-preview-rds-db",
+    "engine": "valkey",
+    "status": "online",
+    "region": "sfo3"
+  },
+  {
+    "name": "genai-seaweed",
+    "engine": "opensearch",
+    "status": "online",
+    "region": "nyc3"
+  }
+]

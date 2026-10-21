@@ -1,0 +1,23 @@
+{
+  "projects": [
+    {
+      "name": "stellarbridge-siem",
+      "type": "security",
+      "region_id": "gcp-us-central1",
+      "alias": "siem-alias",
+      "tier": "standard",
+      "cloud_id": "secret-cloud-id",
+      "endpoints": {
+        "elasticsearch": "https://secret.example"
+      }
+    },
+    {
+      "name": "preview-tracing",
+      "type": "observability",
+      "region_id": "gcp-us-central1",
+      "alias": "preview-alias",
+      "tier": "complete",
+      "cloud_id": "secret-cloud-id"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "name": "tenant-mccutdotus",
+        "annotations": {
+          "secret": "super-secret-value"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "name": "tenant-preview"
+      }
+    },
+    {
+      "metadata": {
+        "name": "kube-system"
+      }
+    }
+  ]
+}

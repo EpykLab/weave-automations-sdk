@@ -1,0 +1,7 @@
+{
+  "items": [
+    {"metadata": {"name": "ingress-nginx"}},
+    {"metadata": {"name": "tenant-mccutdotus"}},
+    {"metadata": {"name": "tenant-private-customer"}}
+  ]
+}

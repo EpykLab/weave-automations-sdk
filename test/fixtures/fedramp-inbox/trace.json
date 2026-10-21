@@ -1,0 +1,12 @@
+{
+  "value": [
+    {
+      "Received": "2026-10-21T12:00:00Z",
+      "SenderAddress": "hidden.local@example.com",
+      "RecipientAddress": "security@epyklab.com",
+      "Subject": "FSI-TEST secret-subject",
+      "Status": "Delivered",
+      "FromIP": "secret-ip"
+    }
+  ]
+}

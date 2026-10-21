@@ -1,0 +1,12 @@
+{
+  "items": [
+    {"metadata": {"name": "ingress-nginx"}},
+    {"metadata": {"name": "kube-system"}},
+    {"metadata": {"name": "tenant-hello-preview"}},
+    {"metadata": {"name": "tenant-hello-prod"}},
+    {"metadata": {"name": "tenant-hello-staging"}},
+    {"metadata": {"name": "tenant-mccutdotus"}},
+    {"metadata": {"name": "tenant-preview"}},
+    {"metadata": {"name": "tenant-staging"}}
+  ]
+}

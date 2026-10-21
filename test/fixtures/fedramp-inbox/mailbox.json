@@ -1,0 +1,11 @@
+{
+  "PrimarySmtpAddress": "security@epyklab.com",
+  "RecipientTypeDetails": "SharedMailbox",
+  "EmailAddresses": [
+    "smtp:security@stellarbridge.app",
+    "smtp:security@Epyklab.onmicrosoft.com",
+    "SMTP:security@epyklab.com"
+  ],
+  "ObjectId": "secret-object-id",
+  "DistinguishedName": "secret-dn"
+}

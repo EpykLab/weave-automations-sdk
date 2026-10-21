@@ -1,0 +1,118 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-mccutdotus",
+        "annotations": {
+          "token": "super-secret-value"
+        }
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "podSelector": {},
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "caddy"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "ingress-nginx"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "podSelector": {}
+              }
+            ]
+          }
+        ],
+        "egress": [
+          {
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 443
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-preview",
+        "annotations": {
+          "token": "super-secret-value"
+        }
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "podSelector": {},
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "caddy"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "kubernetes.io/metadata.name": "ingress-nginx"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "podSelector": {}
+              }
+            ]
+          }
+        ],
+        "egress": [
+          {
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 443
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

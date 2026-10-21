@@ -1,0 +1,35 @@
+{
+  "graph_mails": ["security@epyklab.com"],
+  "primary": "security@epyklab.com",
+  "recipient_type": "SharedMailbox",
+  "addresses": [
+    "smtp:security@stellarbridge.app",
+    "SMTP:security@epyklab.com"
+  ],
+  "permissions": [
+    {
+      "user": "NT AUTHORITY\\SELF",
+      "rights": ["FullAccess"],
+      "deny": false
+    },
+    {
+      "user": "mchapman@epyklab.com",
+      "rights": ["FullAccess"],
+      "deny": false
+    },
+    {
+      "user": "dhoenisch@epyklab.com",
+      "rights": ["FullAccess"],
+      "deny": false
+    }
+  ],
+  "traces": [
+    {
+      "received": "2026-10-21T12:00:00Z",
+      "sender_domain": "example.com",
+      "recipient": "security@stellarbridge.app",
+      "status": "Delivered",
+      "subject_has_marker": true
+    }
+  ]
+}

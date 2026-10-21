@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "namespace": "stllr",
+        "name": "api",
+        "annotations": {"credential": "super-secret-value"}
+      },
+      "spec": {"type": "ClusterIP"}
+    }
+  ]
+}

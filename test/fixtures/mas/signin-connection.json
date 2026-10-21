@@ -1,0 +1,18 @@
+{
+  "login": {
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "verification": "OK",
+    "issuer": "Let's Encrypt",
+    "http_status": 200
+  },
+  "deployments": [
+    {
+      "namespace": "tenant-example",
+      "env": [
+        {"name": "STLLR_AUTH0_OIDC_ISSUER", "secret": "tenant-secrets", "key": "STLLR_AUTH0_OIDC_ISSUER", "value": "https://secret-tenant.example"},
+        {"name": "STLLR_REDIS_CONN_STRING", "secret": "tenant-secrets", "key": "STLLR_REDIS_CONN_STRING", "value": "rediss://secret-password@secret-cache.example:25061"}
+      ]
+    }
+  ]
+}

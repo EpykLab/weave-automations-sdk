@@ -1,0 +1,18 @@
+{
+  "login": {
+    "protocol": "TLSv1.0",
+    "cipher": "AES128-SHA",
+    "verification": "OK",
+    "issuer": "Let's Encrypt",
+    "http_status": 200
+  },
+  "deployments": [
+    {
+      "namespace": "tenant-example",
+      "env": [
+        {"name": "STLLR_AUTH0_OIDC_ISSUER", "secret": "tenant-secrets", "key": "STLLR_AUTH0_OIDC_ISSUER"},
+        {"name": "STLLR_REDIS_CONN_STRING", "secret": "tenant-secrets", "key": "STLLR_REDIS_CONN_STRING"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "tigris_bucket_scope",
+  "organization": "example-org",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "buckets": [
+    {
+      "name": "coc-reports",
+      "status": "in_scope",
+      "rationale": "Example report bucket."
+    },
+    {
+      "name": "other-preview",
+      "status": "excluded",
+      "rationale": "Outside the offering."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@weave/automations",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./digitalocean": "./src/digitalocean.ts",
+    "./github": "./src/github.ts",
+    "./neon": "./src/neon.ts",
+    "./azure": "./src/azure.ts",
+    "./inventory": "./src/inventory.ts",
+    "./resend": "./src/resend.ts",
+    "./kubernetes": "./src/kubernetes.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

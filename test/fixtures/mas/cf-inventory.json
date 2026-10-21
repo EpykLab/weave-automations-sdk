@@ -1,0 +1,10 @@
+{
+  "zones": [
+    {"name": "stellarbridge.app", "status": "active", "type": "full"},
+    {"name": "other.example", "status": "active", "type": "full"}
+  ],
+  "records": [
+    {"name": "login.stellarbridge.app", "type": "A", "content": "203.0.113.10"},
+    {"name": "_acme-challenge.stellarbridge.app", "type": "TXT", "content": "secret-dns-token"}
+  ]
+}

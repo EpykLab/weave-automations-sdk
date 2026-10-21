@@ -1,0 +1,7 @@
+{
+  "project": {
+    "id": "example",
+    "settings": {"history_retention_seconds": 604800},
+    "connection_uri": "postgresql://secret"
+  }
+}

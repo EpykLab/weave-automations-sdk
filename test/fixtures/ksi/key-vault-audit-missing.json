@@ -1,0 +1,8 @@
+{
+  "vaults": [
+    {
+      "name": "turnkey-prod-kv",
+      "settings": []
+    }
+  ]
+}

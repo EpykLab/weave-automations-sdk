@@ -1,0 +1,15 @@
+{
+  "hosts": [
+    {
+      "name": "tenant.example.com",
+      "protocol": "TLSv1.3",
+      "cipher": "TLS_AES_256_GCM_SHA384",
+      "verification": "OK",
+      "issuer": "Let's Encrypt",
+      "not_after": "2026-12-10T22:18:15Z",
+      "http_status": 200,
+      "certificate": "-----BEGIN CERTIFICATE-----\nsecret-certificate\n-----END CERTIFICATE-----",
+      "private_key": "secret-tls-key"
+    }
+  ]
+}

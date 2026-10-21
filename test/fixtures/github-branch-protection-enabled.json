@@ -1,0 +1,12 @@
+{
+  "required_status_checks": {"contexts": ["test", "lint"]},
+  "required_pull_request_reviews": {
+    "required_approving_review_count": 1,
+    "dismissal_restrictions": {
+      "users": [{"login": "reviewer@example.com"}]
+    }
+  },
+  "enforce_admins": {"enabled": true},
+  "allow_force_pushes": {"enabled": false},
+  "allow_deletions": {"enabled": false}
+}

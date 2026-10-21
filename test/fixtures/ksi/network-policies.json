@@ -1,0 +1,250 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-mccutdotus"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-preview"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-staging"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-hello-prod"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-hello-preview"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "stllr-tenant-default",
+        "namespace": "tenant-hello-staging"
+      },
+      "spec": {
+        "policyTypes": [
+          "Ingress",
+          "Egress"
+        ],
+        "ingress": [
+          {
+            "from": [
+              {
+                "namespace": "caddy",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": "ingress-nginx",
+                "pod": false,
+                "ip": false
+              }
+            ]
+          },
+          {
+            "from": [
+              {
+                "namespace": null,
+                "pod": true,
+                "ip": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

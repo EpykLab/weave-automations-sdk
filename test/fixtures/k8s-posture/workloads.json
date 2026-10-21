@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "metadata": {"namespace": "stllr", "name": "api"},
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "api",
+                "env": [{"name": "TOKEN", "value": "super-secret-value"}],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "privileged": false,
+                  "runAsNonRoot": true,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {"drop": ["ALL"]}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

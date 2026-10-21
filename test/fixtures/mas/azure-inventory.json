@@ -1,0 +1,63 @@
+{
+  "subscription": "example_sub",
+  "subscription_id": "secret-subscription-id",
+  "key_vaults": [
+    {
+      "name": "example-kv",
+      "location": "westus2",
+      "sku": "standard",
+      "soft_delete": true,
+      "purge_protection": true,
+      "public_network_access": "Enabled",
+      "network_default_action": "Deny",
+      "rbac": true,
+      "secret_value": "secret-vault-value"
+    },
+    {"name": "other-kv", "secret_value": "secret-vault-value"}
+  ],
+  "event_hub_namespaces": [
+    {
+      "name": "example-events",
+      "location": "westus2",
+      "sku": "Standard",
+      "public_network_access": "Disabled",
+      "local_auth_disabled": true,
+      "minimum_tls_version": "1.2",
+      "primary_key": "secret-storage-key"
+    }
+  ],
+  "event_hubs": [
+    {"namespace": "example-events", "name": "canonical-audit-v1", "partition_count": 4, "message_retention_days": 7}
+  ],
+  "consumer_groups": [
+    {"namespace": "example-events", "event_hub": "canonical-audit-v1", "name": "archive"}
+  ],
+  "storage_accounts": [
+    {
+      "name": "examplearchive",
+      "location": "westus2",
+      "https_only": true,
+      "minimum_tls_version": "TLS1_2",
+      "public_blob_access": false,
+      "shared_key_access": false,
+      "public_network_access": "Disabled",
+      "network_default_action": "Deny",
+      "primary_key": "secret-storage-key"
+    },
+    {"name": "examplebootstrap"}
+  ],
+  "containers": [
+    {
+      "account": "examplearchive",
+      "name": "events",
+      "public_access": "None",
+      "has_immutability_policy": true,
+      "immutability_days": 2192,
+      "immutability_state": "Locked"
+    }
+  ],
+  "workspace_names": ["example-logs"],
+  "workspaces": [
+    {"name": "example-logs", "location": "westus2", "sku": "PerGB2018", "retention_days": 30}
+  ]
+}

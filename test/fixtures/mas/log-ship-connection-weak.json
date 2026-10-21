@@ -1,0 +1,12 @@
+{
+  "namespaces": [
+    {
+      "namespace": "tenant-example",
+      "config": "sinks:\n  elastic_cloud:\n    type: elasticsearch\n    endpoints:\n      - http://example-project-alias.es.example.elastic.cloud\n    api_version: v8\n",
+      "vector_host": "http://vector",
+      "vector_port": "8181",
+      "service_ports": [8181],
+      "api_key_mounted": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "aks_tenant_scope",
+  "cluster_context": "turnkey-prod",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "required_namespaces": [
+    {
+      "name": "ingress-nginx",
+      "status": "in_scope",
+      "resource_id": "RES-INGRESS"
+    }
+  ],
+  "required_deployments": ["stellarbridge-app", "vector"],
+  "namespaces": [
+    {
+      "name": "tenant-mccutdotus",
+      "status": "in_scope",
+      "environment": "production",
+      "rationale": "Fixture production tenant."
+    },
+    {
+      "name": "tenant-preview",
+      "status": "excluded",
+      "environment": "preview",
+      "rationale": "Fixture preview namespace."
+    },
+    {
+      "name": "tenant-staging",
+      "status": "excluded",
+      "environment": "staging",
+      "rationale": "Fixture staging namespace."
+    },
+    {
+      "name": "tenant-hello-prod",
+      "status": "excluded",
+      "environment": "unused",
+      "rationale": "Fixture hello namespace."
+    },
+    {
+      "name": "tenant-hello-preview",
+      "status": "excluded",
+      "environment": "preview",
+      "rationale": "Fixture hello preview namespace."
+    },
+    {
+      "name": "tenant-hello-staging",
+      "status": "excluded",
+      "environment": "staging",
+      "rationale": "Fixture hello staging namespace."
+    }
+  ]
+}

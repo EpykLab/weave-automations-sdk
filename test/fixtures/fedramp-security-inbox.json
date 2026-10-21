@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "fedramp_security_inbox",
+  "reviewed_at": "2026-10-21",
+  "next_review_at": "2027-10-21",
+  "primary_address": "security@epyklab.com",
+  "published_address": "security@stellarbridge.app",
+  "recipient_type": "SharedMailbox",
+  "full_access": [
+    "dhoenisch@epyklab.com",
+    "mchapman@epyklab.com"
+  ],
+  "delivery_subject_marker": "FSI-TEST",
+  "delivery_max_age_days": 10,
+  "sender_domain_denylist": [
+    "epyklab.com",
+    "stellarbridge.app",
+    "epyklab.onmicrosoft.com"
+  ],
+  "rationale": "FedRAMP Security Inbox. The published address stays on this shared mailbox, and a delivered external test must stay inside the message-trace window."
+}

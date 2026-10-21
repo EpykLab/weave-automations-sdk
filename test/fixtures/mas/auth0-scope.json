@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "kind": "auth0_tenant_scope",
+  "tenant": "example.auth0.com",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "organizations": [
+    {
+      "name": "mccutdotus",
+      "display_name": "mccut.us",
+      "status": "in_scope",
+      "rationale": "Production organization."
+    }
+  ],
+  "applications": [
+    {
+      "name": "Stellarbridge Tenant Login (prod)",
+      "status": "in_scope",
+      "rationale": "Production login client."
+    },
+    {
+      "name": "Default App",
+      "status": "excluded",
+      "rationale": "Sample application."
+    }
+  ]
+}

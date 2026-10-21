@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "neon_project_scope",
+  "organization_id": "org-example",
+  "organization_name": "Example",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "projects": [
+    {
+      "project_id": "project-example",
+      "project_name": "stllr-example",
+      "status": "in_scope",
+      "rationale": "Example production database.",
+      "owner_ref": "owner@example.com",
+      "approver_ref": "owner@example.com",
+      "effective_date": "2026-10-19",
+      "next_review_date": "2027-10-19",
+      "environment": "production",
+      "data_classification": "confidential"
+    }
+  ]
+}

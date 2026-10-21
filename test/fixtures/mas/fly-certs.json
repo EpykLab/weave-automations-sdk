@@ -1,0 +1,14 @@
+[
+  {
+    "app": "stellarbridge-tenant-login",
+    "certs": [
+      {"hostname": "login.stellarbridge.app", "status": "Ready", "certificate": "secret-cert"}
+    ]
+  },
+  {
+    "app": "stellarbridge-tenant-login-staging",
+    "certs": [
+      {"hostname": "login.staging.stellarbridge.app", "status": "Ready"}
+    ]
+  }
+]

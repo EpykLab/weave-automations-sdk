@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "do_database_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "databases": [
+    {
+      "name": "stllr-k8s-mccutdotus",
+      "engine": "valkey",
+      "status": "in_scope",
+      "resource_id": "RES-REDIS",
+      "rationale": "Fixture production database."
+    },
+    {
+      "name": "stllr-preview-rds-db",
+      "engine": "valkey",
+      "status": "excluded",
+      "resource_id": "RES-REDIS",
+      "rationale": "Fixture preview database."
+    }
+  ]
+}

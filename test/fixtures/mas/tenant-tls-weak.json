@@ -1,0 +1,13 @@
+{
+  "hosts": [
+    {
+      "name": "tenant.example.com",
+      "protocol": "TLSv1.0",
+      "cipher": "AES128-SHA",
+      "verification": "OK",
+      "issuer": "Let's Encrypt",
+      "not_after": "2026-12-10T22:18:15Z",
+      "http_status": 200
+    }
+  ]
+}

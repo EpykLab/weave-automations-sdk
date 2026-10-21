@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "kind": "azure_offering_scope",
+  "subscription_name": "stellarbridge_app",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "key_vaults": [
+    {
+      "name": "turnkey-prod-kv",
+      "location": "westus2",
+      "sku": "standard",
+      "soft_delete": true,
+      "purge_protection": true,
+      "public_network_access": "Enabled",
+      "network_default_action": "Deny",
+      "rbac": true,
+      "status": "in_scope",
+      "rationale": "Production tenant secret vault. Secret names and values are not collected."
+    }
+  ],
+  "event_hub_namespaces": [
+    {
+      "name": "stllr-prod-audit-events",
+      "resource_group": "stllr-prod-audit-rg",
+      "location": "westus2",
+      "sku": "Standard",
+      "public_network_access": "Disabled",
+      "local_auth_disabled": true,
+      "minimum_tls_version": "1.2",
+      "status": "in_scope",
+      "rationale": "Private canonical audit event hub namespace."
+    },
+    {
+      "name": "stellarbridge-logs-ehns-westus2-a10126b7",
+      "status": "excluded",
+      "rationale": "Container log export namespace, not the canonical audit archive."
+    }
+  ],
+  "event_hubs": [
+    {
+      "namespace": "stllr-prod-audit-events",
+      "name": "canonical-audit-v1",
+      "partition_count": 4,
+      "message_retention_days": 7,
+      "status": "in_scope",
+      "rationale": "Canonical audit event hub."
+    }
+  ],
+  "consumer_groups": [
+    {
+      "namespace": "stllr-prod-audit-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "$Default",
+      "status": "in_scope",
+      "rationale": "Azure platform default consumer group."
+    },
+    {
+      "namespace": "stllr-prod-audit-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "archive",
+      "status": "in_scope",
+      "rationale": "Archive delivery consumer group."
+    },
+    {
+      "namespace": "stllr-prod-audit-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "search",
+      "status": "in_scope",
+      "rationale": "Search delivery consumer group."
+    },
+    {
+      "namespace": "stllr-prod-audit-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "archive-tenant-stellarbridgedotapp",
+      "status": "in_scope",
+      "rationale": "Production tenant archive consumer group."
+    },
+    {
+      "namespace": "stllr-prod-audit-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "search-tenant-stellarbridgedotapp",
+      "status": "in_scope",
+      "rationale": "Production tenant search consumer group."
+    }
+  ],
+  "storage_accounts": [
+    {
+      "name": "stllrephilogarchive",
+      "resource_group": "stllr-prod-audit-rg",
+      "location": "westus2",
+      "https_only": true,
+      "minimum_tls_version": "TLS1_2",
+      "public_blob_access": false,
+      "shared_key_access": false,
+      "public_network_access": "Disabled",
+      "network_default_action": "Deny",
+      "status": "in_scope",
+      "rationale": "Private canonical audit archive."
+    },
+    {
+      "name": "stllrephilogcheckpoint",
+      "resource_group": "stllr-prod-audit-rg",
+      "location": "westus2",
+      "https_only": true,
+      "minimum_tls_version": "TLS1_2",
+      "public_blob_access": false,
+      "shared_key_access": false,
+      "public_network_access": "Disabled",
+      "network_default_action": "Deny",
+      "status": "in_scope",
+      "rationale": "Private audit pipeline checkpoints."
+    },
+    {
+      "name": "sastellarbridga10126b7",
+      "status": "excluded",
+      "rationale": "Diagnostic storage, not the audit archive."
+    },
+    {
+      "name": "sastellarbriw2a10126b7",
+      "status": "excluded",
+      "rationale": "Diagnostic storage, not the audit archive."
+    },
+    {
+      "name": "blobstllrbootstrap",
+      "status": "excluded",
+      "rationale": "Bootstrap storage, not the offering audit archive."
+    }
+  ],
+  "containers": [
+    {
+      "account": "stllrephilogarchive",
+      "name": "events",
+      "public_access": "None",
+      "has_immutability_policy": true,
+      "immutability_days": 2192,
+      "immutability_state": "Locked",
+      "status": "in_scope",
+      "rationale": "Locked audit event container."
+    },
+    {
+      "account": "stllrephilogarchive",
+      "name": "manifests",
+      "public_access": "None",
+      "has_immutability_policy": true,
+      "immutability_days": 2192,
+      "immutability_state": "Locked",
+      "status": "in_scope",
+      "rationale": "Locked audit manifest container."
+    },
+    {
+      "account": "stllrephilogcheckpoint",
+      "name": "archive-checkpoints",
+      "public_access": "None",
+      "has_immutability_policy": false,
+      "immutability_days": null,
+      "immutability_state": null,
+      "status": "in_scope",
+      "rationale": "Archive checkpoint container."
+    },
+    {
+      "account": "stllrephilogcheckpoint",
+      "name": "backfill-checkpoints",
+      "public_access": "None",
+      "has_immutability_policy": false,
+      "immutability_days": null,
+      "immutability_state": null,
+      "status": "in_scope",
+      "rationale": "Backfill checkpoint container."
+    },
+    {
+      "account": "stllrephilogcheckpoint",
+      "name": "search-checkpoints",
+      "public_access": "None",
+      "has_immutability_policy": false,
+      "immutability_days": null,
+      "immutability_state": null,
+      "status": "in_scope",
+      "rationale": "Search checkpoint container."
+    }
+  ],
+  "workspaces": [
+    {
+      "name": "stllr-prod-audit-logs",
+      "resource_group": "stllr-prod-audit-rg",
+      "location": "westus2",
+      "sku": "PerGB2018",
+      "retention_days": 30,
+      "status": "in_scope",
+      "rationale": "Audit Log Analytics workspace. Log contents are not collected."
+    }
+  ]
+}

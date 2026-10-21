@@ -1,0 +1,10 @@
+{
+  "domains": [
+    {"name": "automated.example.com", "domain_status": "verified", "region": "us-east-1"}
+  ],
+  "api_keys": [
+    {"name": "coc-sending"},
+    {"name": "stllr-k8s-preview"},
+    {"name": "unclassified-key"}
+  ]
+}

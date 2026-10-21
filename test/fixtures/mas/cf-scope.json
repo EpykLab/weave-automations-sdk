@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "cloudflare_zone_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "zones": [
+    {"name": "stellarbridge.app", "status": "in_scope", "rationale": "Offering zone."},
+    {"name": "other.example", "status": "excluded", "rationale": "Outside the offering boundary."}
+  ],
+  "required_records": [
+    {"name": "login.stellarbridge.app", "type": "A", "content": "203.0.113.10"}
+  ]
+}

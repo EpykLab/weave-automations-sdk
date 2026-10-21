@@ -1,0 +1,5 @@
+[
+  {"Name": "stellarbridge-tenant-login", "Status": "deployed"},
+  {"Name": "stellarbridge-tenant-login-staging", "Status": "deployed"},
+  {"Name": "unrelated-app", "Status": "suspended", "Secrets": "fly-secret-value"}
+]

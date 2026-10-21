@@ -1,0 +1,16 @@
+{
+  "vaults": [
+    {
+      "name": "turnkey-prod-kv",
+      "settings": [
+        {
+          "logs": [
+            {"category": null, "enabled": true, "categoryGroup": "audit"}
+          ],
+          "workspace": null,
+          "event_hub_namespace": "unapproved-log-export"
+        }
+      ]
+    }
+  ]
+}

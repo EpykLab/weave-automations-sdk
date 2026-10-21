@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "kind": "azure_offering_scope",
+  "subscription_name": "example_sub",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "key_vaults": [
+    {
+      "name": "example-kv",
+      "location": "westus2",
+      "sku": "standard",
+      "soft_delete": true,
+      "purge_protection": true,
+      "public_network_access": "Enabled",
+      "network_default_action": "Deny",
+      "rbac": true,
+      "status": "in_scope",
+      "rationale": "Production vault."
+    },
+    {"name": "other-kv", "status": "excluded", "rationale": "Unrelated vault."}
+  ],
+  "event_hub_namespaces": [
+    {
+      "name": "example-events",
+      "resource_group": "example-rg",
+      "location": "westus2",
+      "sku": "Standard",
+      "public_network_access": "Disabled",
+      "local_auth_disabled": true,
+      "minimum_tls_version": "1.2",
+      "status": "in_scope",
+      "rationale": "Audit namespace."
+    }
+  ],
+  "event_hubs": [
+    {
+      "namespace": "example-events",
+      "name": "canonical-audit-v1",
+      "partition_count": 4,
+      "message_retention_days": 7,
+      "status": "in_scope",
+      "rationale": "Audit hub."
+    }
+  ],
+  "consumer_groups": [
+    {
+      "namespace": "example-events",
+      "event_hub": "canonical-audit-v1",
+      "name": "archive",
+      "status": "in_scope",
+      "rationale": "Archive group."
+    }
+  ],
+  "storage_accounts": [
+    {
+      "name": "examplearchive",
+      "resource_group": "example-rg",
+      "location": "westus2",
+      "https_only": true,
+      "minimum_tls_version": "TLS1_2",
+      "public_blob_access": false,
+      "shared_key_access": false,
+      "public_network_access": "Disabled",
+      "network_default_action": "Deny",
+      "status": "in_scope",
+      "rationale": "Audit archive."
+    },
+    {"name": "examplebootstrap", "status": "excluded", "rationale": "Bootstrap storage."}
+  ],
+  "containers": [
+    {
+      "account": "examplearchive",
+      "name": "events",
+      "public_access": "None",
+      "has_immutability_policy": true,
+      "immutability_days": 2192,
+      "immutability_state": "Locked",
+      "status": "in_scope",
+      "rationale": "Locked event container."
+    }
+  ],
+  "workspaces": [
+    {
+      "name": "example-logs",
+      "resource_group": "example-rg",
+      "location": "westus2",
+      "sku": "PerGB2018",
+      "retention_days": 30,
+      "status": "in_scope",
+      "rationale": "Audit workspace."
+    }
+  ]
+}

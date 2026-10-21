@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "kind": "github_repository_scope",
+  "organization": "EpykLab",
+  "reviewed_at": "2026-07-28",
+  "next_review_at": "2027-07-28",
+  "existing_unlisted_status": "excluded",
+  "newly_discovered_status": "unclassified",
+  "repositories": [
+    {
+      "repository": "EpykLab/stllr",
+      "status": "in_scope",
+      "rationale": "Production application and compliance repository.",
+      "control_families": [
+        "actions",
+        "branch_protection",
+        "dependabot",
+        "security_configuration"
+      ],
+      "owner_ref": "dhoenisch@epyklab.com",
+      "approver_ref": "dhoenisch@epyklab.com",
+      "effective_date": "2026-07-28",
+      "next_review_date": "2027-07-28",
+      "environment": "production",
+      "data_classification": "confidential",
+      "default_branch": "master",
+      "visibility": "private",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "repository": "EpykLab/stllr-infra",
+      "status": "in_scope",
+      "rationale": "Production infrastructure and tenant provisioning.",
+      "control_families": [
+        "actions",
+        "branch_protection",
+        "dependabot",
+        "security_configuration"
+      ],
+      "owner_ref": "dhoenisch@epyklab.com",
+      "approver_ref": "dhoenisch@epyklab.com",
+      "effective_date": "2026-07-28",
+      "next_review_date": "2027-07-28",
+      "environment": "production",
+      "data_classification": "confidential",
+      "default_branch": "master",
+      "visibility": "private",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "repository": "EpykLab/turnkey-stllr-prod",
+      "status": "in_scope",
+      "rationale": "Production GitOps state for the Stellarbridge platform.",
+      "control_families": [
+        "actions",
+        "branch_protection",
+        "dependabot",
+        "security_configuration"
+      ],
+      "owner_ref": "dhoenisch@epyklab.com",
+      "approver_ref": "dhoenisch@epyklab.com",
+      "effective_date": "2026-07-28",
+      "next_review_date": "2027-07-28",
+      "environment": "production",
+      "data_classification": "confidential",
+      "default_branch": "master",
+      "visibility": "private",
+      "archived": false,
+      "fork": false
+    }
+  ]
+}

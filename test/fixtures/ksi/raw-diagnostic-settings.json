@@ -1,0 +1,15 @@
+{
+  "value": [
+    {
+      "name": "secret-setting-name",
+      "workspaceId": "/subscriptions/secret-subscription/resourceGroups/rg/providers/Microsoft.OperationalInsights/workspaces/stllr-prod-audit-logs",
+      "logs": [
+        {
+          "category": "AuditEvent",
+          "enabled": true,
+          "categoryGroup": null
+        }
+      ]
+    }
+  ]
+}

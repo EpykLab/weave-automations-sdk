@@ -1,0 +1,7 @@
+{
+  "items": [
+    {"metadata": {"name": "stellarbridge-app", "namespace": "tenant-mccutdotus"}},
+    {"metadata": {"name": "vector", "namespace": "tenant-mccutdotus"}},
+    {"metadata": {"name": "stellarbridge-app", "namespace": "tenant-preview"}}
+  ]
+}

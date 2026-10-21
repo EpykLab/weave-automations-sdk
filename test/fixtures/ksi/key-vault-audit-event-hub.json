@@ -1,0 +1,16 @@
+{
+  "vaults": [
+    {
+      "name": "turnkey-prod-kv",
+      "settings": [
+        {
+          "logs": [
+            {"category": null, "enabled": true, "categoryGroup": "allLogs"}
+          ],
+          "workspace": null,
+          "event_hub_namespace": "stllr-prod-audit-events"
+        }
+      ]
+    }
+  ]
+}

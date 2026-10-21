@@ -1,0 +1,10 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "namespace": "private-tenant-name",
+        "name": "default-deny"
+      }
+    }
+  ]
+}

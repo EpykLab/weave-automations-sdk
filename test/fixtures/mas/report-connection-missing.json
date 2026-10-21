@@ -1,0 +1,10 @@
+{
+  "workers": [
+    {
+      "namespace": "tenant-example",
+      "env": [
+        {"name": "AWS_ACCESS_KEY_ID", "secret": "tenant-secrets", "key": "STLLR_AWS_ACCESS_KEY_ID"}
+      ]
+    }
+  ]
+}

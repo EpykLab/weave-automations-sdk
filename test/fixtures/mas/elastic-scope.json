@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "elastic_project_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "projects": [
+    {
+      "name": "stellarbridge-siem",
+      "type": "security",
+      "region_id": "gcp-us-central1",
+      "alias": "siem-alias",
+      "tier": "standard",
+      "status": "in_scope",
+      "rationale": "Production security project."
+    },
+    {
+      "name": "preview-tracing",
+      "type": "observability",
+      "region_id": "gcp-us-central1",
+      "alias": "preview-alias",
+      "tier": "complete",
+      "status": "excluded",
+      "rationale": "Non-production preview project."
+    }
+  ]
+}

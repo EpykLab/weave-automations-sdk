@@ -1,0 +1,15 @@
+{
+  "vaults": [
+    {
+      "name": "turnkey-prod-kv",
+      "settings": [
+        {
+          "logs": [
+            {"category": "AuditEvent", "enabled": true, "categoryGroup": null}
+          ],
+          "workspace": "stllr-prod-audit-logs"
+        }
+      ]
+    }
+  ]
+}

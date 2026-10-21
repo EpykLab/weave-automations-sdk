@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "tenant_tls_sample",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "hosts": [
+    {
+      "name": "tenant.example.com",
+      "status": "in_scope",
+      "rationale": "Production tenant web host."
+    }
+  ]
+}

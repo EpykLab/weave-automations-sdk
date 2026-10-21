@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "fly_app_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "apps": [
+    {
+      "name": "stellarbridge-tenant-login",
+      "status": "in_scope",
+      "expected_status": "deployed",
+      "hostname": "login.example.test",
+      "resource_id": "RES-TENANT-LOGIN",
+      "rationale": "Example login router."
+    }
+  ]
+}

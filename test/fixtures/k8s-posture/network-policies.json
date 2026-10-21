@@ -1,0 +1,6 @@
+{
+  "items": [
+    {"metadata": {"namespace": "default", "name": "default-deny"}},
+    {"metadata": {"namespace": "stllr", "name": "default-deny"}}
+  ]
+}

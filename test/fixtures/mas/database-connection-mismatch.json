@@ -1,0 +1,10 @@
+{
+  "connections": [
+    {
+      "namespace": "tenant-example",
+      "connection_string": "postgresql://secret-user:secret-password@ep-secret-other.example.neon.tech/app?sslmode=require",
+      "pooled_host": "ep-secret-pooled.example.neon.tech",
+      "direct_host": "ep-secret-direct.example.neon.tech"
+    }
+  ]
+}

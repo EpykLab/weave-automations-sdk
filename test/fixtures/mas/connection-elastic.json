@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "elastic_project_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "projects": [
+    {
+      "name": "example-siem",
+      "type": "security",
+      "region_id": "gcp-us-central1",
+      "alias": "example-project-alias",
+      "tier": "standard",
+      "status": "in_scope",
+      "rationale": "Example security project."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "domains": [
+    {
+      "name": "automated.example.com",
+      "domain_status": "verified",
+      "region": "us-east-1",
+      "id": "secret-domain-id"
+    }
+  ],
+  "api_keys": [
+    {"name": "coc-sending", "id": "secret-api-key-id", "token": "secret-resend-token"},
+    {"name": "stllr-k8s-preview", "id": "secret-api-key-id"}
+  ]
+}

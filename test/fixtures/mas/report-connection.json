@@ -1,0 +1,13 @@
+{
+  "workers": [
+    {
+      "namespace": "tenant-example",
+      "env": [
+        {"name": "RESEND_API_KEY", "secret": "tenant-secrets", "key": "RESEND_API_KEY", "value": "secret-resend-token"},
+        {"name": "AWS_ACCESS_KEY_ID", "secret": "tenant-secrets", "key": "STLLR_AWS_ACCESS_KEY_ID", "value": "secret-access-key"},
+        {"name": "AWS_SECRET_ACCESS_KEY", "secret": "tenant-secrets", "key": "STLLR_AWS_SECRET_ACCESS_KEY", "value": "secret-secret-key"}
+      ],
+      "bucket_name": ""
+    }
+  ]
+}

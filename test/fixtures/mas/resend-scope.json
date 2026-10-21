@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "resend_account_scope",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "domains": [
+    {
+      "name": "automated.example.com",
+      "domain_status": "verified",
+      "region": "us-east-1",
+      "status": "in_scope",
+      "rationale": "Verified sending domain."
+    }
+  ],
+  "api_keys": [
+    {"name": "coc-sending", "status": "in_scope", "rationale": "Offering notification key."},
+    {"name": "stllr-k8s-preview", "status": "excluded", "rationale": "Non-production preview key."}
+  ]
+}

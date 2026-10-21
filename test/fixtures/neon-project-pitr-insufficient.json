@@ -1,0 +1,6 @@
+{
+  "project": {
+    "id": "insufficient",
+    "settings": {"history_retention_seconds": 86400}
+  }
+}

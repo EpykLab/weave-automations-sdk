@@ -1,0 +1,22 @@
+{
+  "value": [
+    {
+      "User": "NT AUTHORITY\\SELF",
+      "PermissionList": [
+        { "AccessRights": ["FullAccess"], "Deny": false }
+      ]
+    },
+    {
+      "User": "dhoenisch@epyklab.com",
+      "PermissionList": [
+        { "AccessRights": ["FullAccess"], "Deny": false }
+      ]
+    },
+    {
+      "User": "mchapman@epyklab.com",
+      "PermissionList": [
+        { "AccessRights": ["FullAccess"], "Deny": false }
+      ]
+    }
+  ]
+}

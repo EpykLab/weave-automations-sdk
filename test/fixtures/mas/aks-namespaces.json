@@ -1,0 +1,8 @@
+{
+  "items": [
+    {"metadata": {"name": "ingress-nginx"}},
+    {"metadata": {"name": "tenant-mccutdotus"}},
+    {"metadata": {"name": "tenant-preview"}},
+    {"metadata": {"name": "kube-system"}}
+  ]
+}

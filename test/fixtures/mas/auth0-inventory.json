@@ -1,0 +1,9 @@
+{
+  "organizations": [
+    {"name": "mccutdotus", "display_name": "mccut.us"}
+  ],
+  "applications": [
+    {"name": "Stellarbridge Tenant Login (prod)", "client_id": "secret-client-id"},
+    {"name": "Default App", "client_id": "another-secret-client-id"}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "namespace": "private-tenant-name",
+        "name": "private-workload"
+      },
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "private-container",
+                "securityContext": {
+                  "allowPrivilegeEscalation": true,
+                  "privileged": true
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

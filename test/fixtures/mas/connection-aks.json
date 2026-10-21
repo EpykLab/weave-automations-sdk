@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "aks_tenant_scope",
+  "cluster_context": "turnkey-prod",
+  "reviewed_at": "2026-10-19",
+  "next_review_at": "2027-10-19",
+  "required_namespaces": [
+    {"name": "ingress-nginx", "status": "in_scope", "resource_id": "RES-INGRESS"}
+  ],
+  "required_deployments": ["stellarbridge-app", "coc-reporting-worker", "vector"],
+  "namespaces": [
+    {
+      "name": "tenant-example",
+      "status": "in_scope",
+      "environment": "production",
+      "rationale": "Example production namespace."
+    },
+    {
+      "name": "tenant-other",
+      "status": "excluded",
+      "environment": "preview",
+      "rationale": "Outside the offering."
+    }
+  ]
+}
