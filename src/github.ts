@@ -57,7 +57,7 @@ export const branchProtection: Check = defineCheck({
       (repo) => repo.status === "in_scope" && repo.control_families.includes("branch_protection"),
     )
     const failures: Array<{ repository: string; message: string; kind: "blocked" | "failed"; detail?: unknown }> = []
-    const repositories = []
+    const repositories: Array<{ repository: string } & ReturnType<typeof normalize>> = []
     await mapLimit(targets, 8, async (target) => {
       try {
         const repo = await gh.get<Repo>(`/repos/${target.repository}`)
@@ -186,7 +186,7 @@ export const dependabot: Check = defineCheck({
       (repo) => repo.status === "in_scope" && repo.control_families.includes("dependabot"),
     )
     const failures: Array<{ repository: string; message: string }> = []
-    const repositories = []
+    const repositories: Array<ReturnType<typeof summarize>> = []
     await mapLimit(targets, 8, async (target) => {
       try {
         const alerts = await gh.paginate<Alert>(`/repos/${target.repository}/dependabot/alerts`)

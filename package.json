@@ -1,25 +1,74 @@
 {
-  "name": "@weave/automations",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@epyklabdotcom/automations",
+  "version": "0.1.0",
+  "description": "Weave automation checks, actions, and runtime adapters.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpykLab/weave-automations-sdk.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "files": [
+    "dist",
+    "migrations"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./digitalocean": "./src/digitalocean.ts",
-    "./github": "./src/github.ts",
-    "./neon": "./src/neon.ts",
-    "./azure": "./src/azure.ts",
-    "./inventory": "./src/inventory.ts",
-    "./resend": "./src/resend.ts",
-    "./kubernetes": "./src/kubernetes.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./digitalocean": {
+      "types": "./dist/digitalocean.d.ts",
+      "import": "./dist/digitalocean.js"
+    },
+    "./github": {
+      "types": "./dist/github.d.ts",
+      "import": "./dist/github.js"
+    },
+    "./neon": {
+      "types": "./dist/neon.d.ts",
+      "import": "./dist/neon.js"
+    },
+    "./azure": {
+      "types": "./dist/azure.d.ts",
+      "import": "./dist/azure.js"
+    },
+    "./inventory": {
+      "types": "./dist/inventory.d.ts",
+      "import": "./dist/inventory.js"
+    },
+    "./resend": {
+      "types": "./dist/resend.d.ts",
+      "import": "./dist/resend.js"
+    },
+    "./kubernetes": {
+      "types": "./dist/kubernetes.d.ts",
+      "import": "./dist/kubernetes.js"
+    }
   },
   "scripts": {
-    "test": "node --experimental-strip-types --test test/*.test.ts"
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "test:package": "node scripts/test-package.mjs",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "dependencies": {
     "pg": "^8.23.1"
   },
   "devDependencies": {
-    "esbuild": "^0.28.2"
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
   }
 }

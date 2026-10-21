@@ -25,8 +25,17 @@ async function kubeWorkloads(ctx: CheckContext) {
   return { items: lists.flatMap((list) => ((list as { items?: unknown[] }).items ?? [])) }
 }
 
-function containersOf(workloads: { items?: Array<{ spec?: { template?: { spec?: { containers?: unknown[]; initContainers?: unknown[] } } } }> }) {
-  return (workloads.items ?? []).flatMap((item) => [
+type PostureWorkload = { spec?: { template?: { spec?: { containers?: unknown[]; initContainers?: unknown[] } } } }
+
+type ClusterSnapshot = {
+  workloads: { items: unknown[] }
+  namespaces: { items: Array<{ metadata: { name: string } }> }
+  policies: { items: Array<{ metadata: { namespace: string } }> }
+  services: { items: Array<{ metadata: { namespace: string }; spec?: { type?: string } }> }
+}
+
+function containersOf(workloads: { items?: unknown[] }) {
+  return ((workloads.items ?? []) as PostureWorkload[]).flatMap((item) => [
     ...(item.spec?.template?.spec?.containers ?? []),
     ...(item.spec?.template?.spec?.initContainers ?? []),
   ]) as Array<{ securityContext?: { privileged?: boolean; allowPrivilegeEscalation?: boolean; runAsNonRoot?: boolean; readOnlyRootFilesystem?: boolean; capabilities?: { drop?: string[] } } }>
@@ -37,12 +46,7 @@ export const posture = defineCheck({
   secrets: ["KUBECONFIG"],
   scopeKind: "aks_tenant_scope",
   async run(ctx) {
-    const live = await providerPayload<{
-      workloads: { items: unknown[] }
-      namespaces: { items: Array<{ metadata: { name: string } }> }
-      policies: { items: Array<{ metadata: { namespace: string } }> }
-      services: { items: Array<{ metadata: { namespace: string }; spec?: { type?: string } }> }
-    }>(ctx, () => clusterSnapshot(ctx))
+    const live = await providerPayload<ClusterSnapshot>(ctx, () => clusterSnapshot(ctx))
     const containers = containersOf(live.workloads)
     const weak = containers.some((container) => {
       const security = container.securityContext ?? {}
@@ -255,7 +259,7 @@ async function clusterSnapshot(ctx: CheckContext) {
     kube.get("/apis/networking.k8s.io/v1/networkpolicies"),
     kube.get("/api/v1/services"),
   ])
-  return { workloads: await kubeWorkloads(ctx), namespaces, policies, services }
+  return { workloads: await kubeWorkloads(ctx), namespaces, policies, services } as ClusterSnapshot
 }
 
 async function networkSnapshot(ctx: CheckContext) {

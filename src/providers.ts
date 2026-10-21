@@ -328,7 +328,8 @@ function sampleHost(host: string) {
       const certificate = socket.getPeerCertificate()
       const protocol = socket.getProtocol() ?? ""
       const cipher = socket.getCipher()
-      const issuer = certificate.issuer?.O || certificate.issuer?.CN || ""
+      const issuerName = certificate.issuer?.O || certificate.issuer?.CN || ""
+      const issuer = Array.isArray(issuerName) ? issuerName.join(", ") : issuerName
       const notAfter = certificate.valid_to ? new Date(certificate.valid_to).toISOString() : ""
       socket.end()
       const response = await fetch(`https://${host}`)

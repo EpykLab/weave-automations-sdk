@@ -1,9 +1,9 @@
 import { scopeDigest } from "./digest.ts"
-import { CheckError, type ActionStore, type CheckContext, type HttpRequest, type HttpResponse, type RecipeBinding } from "./types.ts"
+import { CheckError, type ActionStore, type Caller, type CheckContext, type HttpRequest, type HttpResponse, type RecipeBinding } from "./types.ts"
 
 export interface App {
   recipes: RecipeBinding[]
-  authenticate(token: string): { subject: string; allows(recipeId: string, operation: "run" | "act"): boolean } | undefined | Promise<{ subject: string; allows(recipeId: string, operation: "run" | "act"): boolean } | undefined>
+  authenticate(token: string): Caller | undefined | Promise<Caller | undefined>
   store: ActionStore
   now(): Date
   readScope(path: string): Promise<unknown>

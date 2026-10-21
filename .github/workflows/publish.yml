@@ -1,0 +1,56 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Check release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs'
+          const { name, version } = JSON.parse(readFileSync('package.json', 'utf8'))
+          if (name !== '@epyklabdotcom/automations') throw new Error('Unexpected package name')
+          if (process.env.RELEASE_TAG !== `v${version}`) throw new Error('Release tag must match package.json: v' + version)
+          if (version.includes('-') !== (process.env.RELEASE_PRERELEASE === 'true')) {
+            throw new Error('GitHub prerelease status must match the package version')
+          }
+          NODE
+      - name: Install npm with trusted publishing support
+        run: npm install --global npm@11.12.1
+      - run: npm ci
+      - run: npm test
+      - run: npm run test:package
+      - name: Publish
+        env:
+          RELEASE_PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          if [ "$RELEASE_PRERELEASE" = "true" ]; then
+            npm publish --access public --tag next
+          else
+            npm publish --access public --tag latest
+          fi
