@@ -69,12 +69,13 @@ npm publish --dry-run
 npm publish --access public
 ```
 
-After the package exists, configure a GitHub Actions trusted publisher using npm 11.10.0 or later (requires account-level 2FA):
+After the package exists, configure a GitHub Actions trusted publisher using npm 12.2.0 or later (requires account-level 2FA):
 
 ```sh
 npm trust github @epyklabdotcom/automations \
   --repo EpykLab/weave-automations-sdk \
   --file publish.yml \
+  --allow-publish \
   --yes
 npm trust list @epyklabdotcom/automations
 ```
