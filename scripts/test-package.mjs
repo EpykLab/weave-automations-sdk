@@ -11,11 +11,13 @@ const npm = process.platform === "win32" ? "npm.cmd" : "npm"
 const manifest = JSON.parse(readFileSync(path.join(root, "package.json"), "utf8"))
 
 try {
-  const packed = JSON.parse(execFileSync(npm, ["pack", "--json", "--pack-destination", temporary], {
+  const packResult = JSON.parse(execFileSync(npm, ["pack", "--json", "--pack-destination", temporary], {
     cwd: root,
     encoding: "utf8",
     stdio: ["ignore", "pipe", "inherit"],
-  }))[0]
+  }))
+  const packed = Array.isArray(packResult) ? packResult[0] : packResult[manifest.name]
+  assert(packed, "npm pack did not return metadata for " + manifest.name)
   const files = packed.files.map((file) => file.path)
   for (const required of ["LICENSE", "README.md", "dist/index.js", "dist/index.d.ts"]) {
     assert(files.includes(required), `Missing ${required}`)
